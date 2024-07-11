@@ -8,7 +8,7 @@ $dbpass = 'abzo.123.com.*#@';
 try {
     $pdo = new PDO("pgsql:host=$dbhost;port=$port;dbname=$dbname", $dbuser, $dbpass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "The database was connected successfully";
+    //echo "The database was connected successfully";
 } catch (PDOException $e) {
     die("Database connection error:" . $e->getMessage());
 }
