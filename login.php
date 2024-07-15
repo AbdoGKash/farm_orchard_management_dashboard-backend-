@@ -16,6 +16,7 @@ try{
         $response['success'] = true;
         $response['message'] = "You have been logged in successfully.";
         $response['permissions'] = $user['permissions'];
+        $response['username'] = $user['username'];
     } else {
         $response['success'] = false;
         $response['message'] = "Incorrect username or password.";
