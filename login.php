@@ -1,10 +1,13 @@
 <?php
 include 'connect.php';
+header('Content-Type: application/json');
+
 $response = array();
 
 try{
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $input = json_decode(file_get_contents('php://input'), true);
+    $username = $input['username'];
+    $password = $input['password'];
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->execute(['username' => $username]);
     $user = $stmt->fetch();
